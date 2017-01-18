@@ -11810,7 +11810,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Total-spent-in-one-year">Total spent in one year<a class="anchor-link" href="#Total-spent-in-one-year">&#182;</a></h2><p>We want to see how much was spent in reimbursements in one year.
+<h2 id="Total-spent-in-one-year">Total spent in one year<a class="anchor-link" href="#Total-spent-in-one-year">&#182;</a></h2><p>We want to see how much was spent in reimbursements in one year an how many reimbursements were made.
 The dataset goes from 2009 to 2016.</p>
 
 </div>
@@ -11818,12 +11818,13 @@ The dataset goes from 2009 to 2016.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">years</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2009</span><span class="p">,</span> <span class="mi">2010</span><span class="p">,</span> <span class="mi">2011</span><span class="p">,</span> <span class="mi">2012</span><span class="p">,</span> <span class="mi">2013</span><span class="p">,</span> <span class="mi">2014</span><span class="p">,</span> <span class="mi">2015</span><span class="p">,</span> <span class="mi">2016</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">years</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;: &#39;</span><span class="p">,</span> <span class="nb">sum</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;issue_date_year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">i</span><span class="p">][</span><span class="s1">&#39;total_net_value&#39;</span><span class="p">]))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> &#39;</span><span class="p">,</span> <span class="s1">&#39;total reimbursed:&#39;</span><span class="p">,</span> <span class="nb">sum</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;issue_date_year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">i</span><span class="p">][</span><span class="s1">&#39;total_net_value&#39;</span><span class="p">]),</span> \
+         <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">  expenses:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;issue_date_year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">i</span><span class="p">]),</span> <span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -11836,14 +11837,46 @@ The dataset goes from 2009 to 2016.</p>
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>2009 :  90246572.85
-2010 :  120169686.2
-2011 :  123799712.0
-2012 :  122853241.79
-2013 :  134535007.65
-2014 :  143424839.27
-2015 :  160374692.14
-2016 :  134616207.06
+<pre>2009 
+  total reimbursed: 90246572.85 
+  expenses: 171697 
+
+
+2010 
+  total reimbursed: 120169686.2 
+  expenses: 204182 
+
+
+2011 
+  total reimbursed: 123799712.0 
+  expenses: 213361 
+
+
+2012 
+  total reimbursed: 122853241.79 
+  expenses: 197146 
+
+
+2013 
+  total reimbursed: 134535007.65 
+  expenses: 195035 
+
+
+2014 
+  total reimbursed: 143424839.27 
+  expenses: 172369 
+
+
+2015 
+  total reimbursed: 160374692.14 
+  expenses: 209325 
+
+
+2016 
+  total reimbursed: 134616207.06 
+  expenses: 169241 
+
+
 </pre>
 </div>
 </div>

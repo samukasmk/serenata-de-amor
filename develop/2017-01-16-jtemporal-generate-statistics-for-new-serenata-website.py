@@ -33,14 +33,14 @@ dataset['issue_date_week'] = dataset['issue_date'].apply(lambda date: date.week)
 
 # ## Total spent in one year
 # 
-# We want to see how much was spent in reimbursements in one year.
+# We want to see how much was spent in reimbursements in one year an how many reimbursements were made.
 # The dataset goes from 2009 to 2016.
 
-# In[3]:
+# In[6]:
 
 years = [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016]
 for i in years:
-    print(i, ': ', sum(dataset[dataset['issue_date_year'] == i]['total_net_value']))
+    print(i, '\n ', 'total reimbursed:', sum(dataset[dataset['issue_date_year'] == i]['total_net_value']),          '\n  expenses:', len(dataset[dataset['issue_date_year'] == i]), '\n\n')
 
 
 # And the average considering all eight years:
