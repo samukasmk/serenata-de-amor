@@ -20,9 +20,21 @@ A lot of discussions about ideas take place in the [Issues](https://github.com/d
 
 ## Environment
 
-### Local Installation Environment (without Docker)
+### With Docker
 
-The recommended way of setting your environment up is with [Anaconda](https://www.continuum.io/), a Python distribution with useful packages for Data Science.
+Specially if you have enough memory, Docker is the preferable way for running the project.
+
+Install [Docker](https://www.docker.com/), [Docker Compose](https://docs.docker.com/compose/) and run the following command:
+
+```console
+$ docker-compose up --build
+```
+
+Then head to http://localhost:8888/.
+
+### Without Docker
+
+If you prefer not to use Docker, there's [Anaconda](https://www.continuum.io/), a Python distribution with useful packages for Data Science.
 
 The project uses Python 3 (specified in the `python=3` bit of the commands below). [Download Anaconda](https://www.continuum.io/downloads) and create an _environment_ for the project.
 
@@ -60,16 +72,6 @@ If you installed Anaconda via [pyenv](https://github.com/yyuu/pyenv), `source ac
 ```console
 $ source /usr/local/var/pyenv/versions/anaconda3-4.1.1/bin/activate serenata_de_amor
 ```
-
-### Docker Installation Environment
-
-You can user [Docker](https://docs.docker.com/engine/installation/) and [Docker Compose](https://docs.docker.com/compose/install/) to have a working environment:
-
-```console
-$ docker-compose up --build
-```
-
-Then head to http://localhost:8888/.
 
 ## Best practices
 
