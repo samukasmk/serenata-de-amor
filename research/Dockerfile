@@ -3,14 +3,10 @@ LABEL maintainer "Data Science Brigade <contato@datasciencebr.com>"
 
 USER root
 
-RUN apt-get update \
-    && apt-get install unzip -y --no-install-recommends \
-    && apt-get clean \
+RUN apt-get install unzip -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 USER jovyan
-
-RUN pip install --upgrade pip
 
 COPY jupyter_notebook_config.py /home/jovyan/.jupyter/jupyter_notebook_config.py
 
@@ -18,7 +14,8 @@ RUN mkdir /home/jovyan/research
 WORKDIR /home/jovyan/research
 
 COPY conda_requirements.txt ./
-COPY config.ini.example ./
+RUN conda config --add channels conda-forge \
+    && conda install --yes --file conda_requirements.txt
 COPY requirements.txt ./
-COPY setup ./
-RUN ./setup
+RUN pip install --upgrade pip
+RUN pip install --upgrade -r requirements.txt

@@ -9,3 +9,4 @@ services:
       - ./research/develop:/home/jovyan/research/develop
       - ./research/docs:/home/jovyan/research/docs
       - ./research/src:/home/jovyan/research/src
+      - ./research/config.ini:/home/jovyan/research/config.ini

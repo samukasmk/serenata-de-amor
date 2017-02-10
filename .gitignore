@@ -2,7 +2,7 @@
 .ipynb_checkpoints
 .python-version
 __pycache__/
-config.ini
-data
 .idea/
 serenata-de-amor.iml
+research/data
+research/config.ini
