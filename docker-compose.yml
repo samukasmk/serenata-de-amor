@@ -10,3 +10,12 @@ services:
       - ./research/docs:/home/jovyan/research/docs
       - ./research/src:/home/jovyan/research/src
       - ./research/config.ini:/home/jovyan/research/config.ini
+    volumes_from:
+      - toolbox
+  toolbox:
+    build: toolbox
+    volumes:
+      - ./toolbox/docs:/home/jovyan/toolbox/docs
+      - ./toolbox/serenata_toolbox:/home/jovyan/toolbox/serenata_toolbox
+      - ./toolbox/tests:/home/jovyan/toolbox/tests
+      - ./toolbox/setup.py:/home/jovyan/toolbox/setup.py

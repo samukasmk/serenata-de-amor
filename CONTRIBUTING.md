@@ -27,6 +27,7 @@ Specially if you have enough memory, Docker is the preferable way for running th
 Install [Docker](https://www.docker.com/), [Docker Compose](https://docs.docker.com/compose/) and run the following command:
 
 ```console
+$ git clone --recursive git@github.com:datasciencebr/serenata-de-amor.git
 $ cp research/config.ini.example research/config.ini
 $ docker-compose up --build
 $ docker-compose run research python src/fetch_datasets.py
